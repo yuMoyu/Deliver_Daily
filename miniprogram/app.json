@@ -1,14 +1,21 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/addToDo/addToDo",
+    "pages/todoInfo/todoInfo"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "云待办",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "usingComponents": {
+      "van-button": "vant-weapp/button",
+      "van-cell": "vant-weapp/cell/index",
+      "van-cell-group": "vant-weapp/cell-group/index",
+      "van-icon": "vant-weapp/icon/index"
+    }
 }

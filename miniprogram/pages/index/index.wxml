@@ -1,2 +1,16 @@
-<text>index.html</text>
-<van-button type="primary">按钮</van-button>
+<!-- 跳转到添加页面 -->
+<view class='plusBtn'>
+  <navigator url="../addToDo/addToDo">
+    <van-icon class=".plusIcon" name="plus" />
+  </navigator>
+</view>
+<van-cell-group>
+  <!-- 列表项 -->
+  <block wx:for="{{tasks}}">
+    <!-- 点击跳转到todoInfo -->
+    <navigator url='../todoInfo/todoInfo?id={{item._id}}'>
+      <van-cell title="{{item.title}}" />
+    </navigator>
+  </block>
+
+</van-cell-group>

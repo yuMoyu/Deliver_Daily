@@ -1,0 +1,14 @@
+.plusBtn{
+  position: fixed;
+  z-index: 100;
+  bottom:150rpx;
+  right:375rpx;
+  background-color:#ff0;
+  border-radius: 100rpx;
+  width:80rpx;
+  height:80rpx;
+  line-height:100rpx; 
+}
+.plusIcon{
+  font-size:80rpx;
+}
