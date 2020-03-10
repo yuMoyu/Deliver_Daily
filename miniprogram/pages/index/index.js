@@ -1,5 +1,5 @@
 const db = wx.cloud.database();
-const todos = db.collection('todos');
+const todos = db.collection('todos').orderBy('work','desc');
 Page({
 
   /**
@@ -7,9 +7,10 @@ Page({
    */
   data: {
     //若task为null则无concat方法，报错：Cannot read property 'concat' of null
-    tasks:[]
+    tasks:[],
+    activeNames: ['1']
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */

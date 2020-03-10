@@ -1,5 +1,28 @@
 <van-cell-group>
 <!-- border=false去除下划线 -->
-   <van-cell  title="{{task.title}}" border="{{false}}" value="{{task.status==='in-progress'?'进行中':'已完成'}}"/>
+   <van-cell
+      title="投递方式"
+      value="{{task.work}}"
+      border="{{false}}" />
+     <van-cell
+      title="投递公司"
+      value="{{task.company}}"
+      border="{{false}}" />
+     <van-cell
+      title="投递工作"
+      value="{{task.workp}}"
+      border="{{false}}" />
+   <van-cell
+      title="投递状态"
+      value="{{task.status}}"
+      border="{{false}}" />
+    <van-button type="default" block bindtap="changeSta">更新状态</van-button>
+    <van-cell
+      wx:if="{{task.location}}"
+      title="位置"
+      icon="location"
+      border="{{false}}" 
+      value="{{task.location.name}}"
+      bind:click="viewLocation"/>
 </van-cell-group>
 <image wx:if="{{task.image}}" src="{{task.image}}"></image>

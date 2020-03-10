@@ -15,11 +15,22 @@ Page({
         //将结果赋值给data
         task:res.data
       })
-    })
-   
-    
+    }) 
   },
-  onReady: function () {
-
+  //查看导航
+  viewLocation:function(){
+    wx.openLocation({
+      latitude:this.data.task.location.latitude,
+      longitude:this.data.task.location.longitude,
+      name:this.data.task.location.name,
+      address:this.data.task.location.address,
+    })
+  },
+  //更新状态
+  changeSta:function(){
+    wx.redirectTo({
+      //反引号
+      url: `../updateSta/updateSta?id=${this.pageData.id}`,
+    })
   }
 })

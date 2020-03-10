@@ -4,7 +4,19 @@ const db = wx.cloud.database();
 const todos = db.collection('todos');
 Page({
   data:{
-    image:null
+    image:null,
+    work: [
+      { text: '智联招聘', value: '智联招聘' },
+      { text: '拉钩招聘', value: '拉钩招聘' },
+      { text: 'BOSS直聘', value: 'BOSS直聘' },
+      { text: '牛客网', value: '牛客网' },
+      { text: '51job', value: '51job' },
+      { text: '官网投递', value: '官网投递' },
+      { text: '内推', value: '内推' },
+    ]
+  },
+  pageData:{
+    locationObj:{}
   },
   //上传图片
   selectImage:function(e){
@@ -30,12 +42,15 @@ Page({
     })
   },
   onSubmit:function(event){
-    console.log(event.detail.value.title)
-    //新增数据
+     //新增数据
     todos.add({
       data:{
-        title:event.detail.value.title,
-        image:this.data.image
+        work: event.detail.value.work,
+        company: event.detail.value.company,
+        workp:event.detail.value.workp,
+        status: event.detail.value.status,
+        image:this.data.image,
+        location:this.pageData.locationObj
       }
     }).then(res=>{
       console.log(res._id)
@@ -51,6 +66,22 @@ Page({
           })
         }
       })
+    })
+  },
+  //获取位置
+  //Cannot read property 'pageData' of undefined;at api chooseLocation success callback function 有可能是在回调函数内使用this
+  chooseLocation:function(e){
+    wx.chooseLocation({
+      success:res=> {
+        let locationObj = {
+          latitude:res.latitude,
+          longitude: res.longitude,
+          name: res.name,
+          address:res.address
+        }
+        this.pageData.locationObj = locationObj
+      },
+      
     })
   }
 })

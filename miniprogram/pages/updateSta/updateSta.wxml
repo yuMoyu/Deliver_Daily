@@ -1,0 +1,5 @@
+<form bindsubmit="onSubmit" >
+  <input name="status" class="fiel"
+  placeholder="请输入状态..."></input>
+  <button form-type="submit">提交</button>
+  </form>

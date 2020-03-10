@@ -4,12 +4,13 @@
     <van-icon class=".plusIcon" name="plus" />
   </navigator>
 </view>
+
 <van-cell-group>
   <!-- 列表项 -->
   <block wx:for="{{tasks}}">
     <!-- 点击跳转到todoInfo -->
     <navigator url='../todoInfo/todoInfo?id={{item._id}}'>
-      <van-cell title="{{item.title}}" />
+      <van-cell title="{{item.work}}" value="{{item.company}}" label="{{item.status}}"/>
     </navigator>
   </block>
 

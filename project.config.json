@@ -67,7 +67,14 @@
 					"id": 2,
 					"name": "todoInfo",
 					"pathName": "pages/todoInfo/todoInfo",
-					"query": "id=da51bd8c5e4665770fa064af1cf1ebea",
+					"query": "id=da51bd8c5e4794d6100b63cb49db1e4d",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/updateSta/updateSta",
+					"pathName": "pages/updateSta/updateSta",
+					"query": "id=1583807522598_0.7579254584635999_33591533",
 					"scene": null
 				}
 			]
