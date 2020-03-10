@@ -63,5 +63,12 @@ Page({
   //跳页
   pageData:{
     skip:0
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '投递日记',
+      path: '/pages/index/index',
+      imageUrl: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1583824796&di=438a4cc1d45abf8dd09d564cfaa48128&src=http://img01.jituwang.com/170621/256892-1F6210QI716.jpg'
+    }
   }
 })
